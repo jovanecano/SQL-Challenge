@@ -1,8 +1,8 @@
 --creating emplyee title table
 CREATE TABLE titles(
-	title_id PRIMARY KEY
+	title_id INT PRIMARY KEY,
+	title VARCHAR(40)
 );
-
 
 
 -- Creating the table for employees
@@ -16,3 +16,23 @@ create table employees (
 	hire_date DATE
 	FOREIGN KEY (emp_title_id) REFERENCES titles(title_id)
 );
+
+-- Creating the table for departments
+CREATE TABLE departments (
+	dept_no VARCHAR(8) PRIMARY KEY NOT NULL,
+	dept_name VARCHAR(40)
+);
+
+-- Creating the table for department employee
+CREATE TABLE dept_emp (
+	emp_no INT NOT NULL,
+	dept_no VARCHAR(8) NOT NULL
+	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+	FOREIGN KEY (dept_no) REFERENCES departments (dept_no)
+);
+
+
+
+
+
+
