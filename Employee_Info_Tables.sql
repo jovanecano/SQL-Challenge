@@ -7,13 +7,13 @@ CREATE TABLE titles(
 -- Creating the table for employees
 create table employees (
 	emp_no INT PRIMARY KEY NOT NULL,
-	emp_tittle_id VARCHAR(5),
+	emp_tittle_id INT,
 	birth_date DATE,
 	first_name VARCHAR(30),
 	last_name VARCHAR(30),
 	sex VARCHAR(1),
-	hire_date DATE
-	FOREIGN KEY (emp_title_id) REFERENCES titles(title_id)
+	hire_date DATE,
+	FOREIGN KEY (emp_tittle_id) REFERENCES titles(title_id)
 );
 
 -- Creating the table for departments
@@ -45,3 +45,4 @@ CREATE TABLE salaries (
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
 
+SELECT * FROM employees
