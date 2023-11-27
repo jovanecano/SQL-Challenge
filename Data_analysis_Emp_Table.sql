@@ -29,3 +29,10 @@ LEFT JOIN dept_emp
 on employees.emp_no = dept_emp.emp_no
 INNER JOIN departments
 ON dept_emp.dept_no = departments.dept_no;
+
+-- List first name, last name, and sex of each employee whose first name is Hercules and whose
+-- last name begins with the letter B
+SELECT first_name, last_name
+FROM employees
+WHERE employees.first_name = 'Hercules' and last_name LIKE 'B%';
+
