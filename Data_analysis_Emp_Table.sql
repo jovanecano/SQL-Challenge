@@ -35,4 +35,3 @@ ON dept_emp.dept_no = departments.dept_no;
 SELECT first_name, last_name
 FROM employees
 WHERE employees.first_name = 'Hercules' and last_name LIKE 'B%';
-
