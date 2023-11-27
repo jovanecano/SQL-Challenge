@@ -11,3 +11,12 @@ SELECT first_name, last_name, hire_date
 FROM emmployees
 WHERE EXTRACT(YEAR FROM hire_date) = 1986;
 
+-- List the manager of each department along with their department number, department name,...
+-- employee #, last name, and first name
+SELECT DISTINCT ON (dept_manager.dept_no) dept_manager.dept_no, departments.dept_name, dept_manager.emp_no, 
+employees.last_name, employees.first_name
+FROM dept_manager
+INNER JOIN departments
+ON dept_manager.dept_no = department.dept_no
+INNER JOIN employees
+on dept_manager.emp_no = employees.emp_no
