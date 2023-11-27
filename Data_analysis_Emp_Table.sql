@@ -19,4 +19,13 @@ FROM dept_manager
 INNER JOIN departments
 ON dept_manager.dept_no = department.dept_no
 INNER JOIN employees
-on dept_manager.emp_no = employees.emp_no
+on dept_manager.emp_no = employees.emp_no;
+
+-- List the department number for each employee along with that employee's emp_no, last name,first name
+-- and department name
+SELECT DISTINCT ON(employees.emp_no) employees.emp_no, employees.last_name, employees.first_name, departments.dept_name
+FROM employees
+LEFT JOIN dept_emp
+on employees.emp_no = dept_emp.emp_no
+INNER JOIN departments
+ON dept_emp.dept_no = departments.dept_no;
